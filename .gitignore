@@ -1,0 +1,27 @@
+.env
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual Environment
+venv/
+
+# IDE/Editor config files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+
+# Data
+data/*.csv
+
+# Logs
+*.log
+
+# Models
+models/saved_model/
+
+# Tests
+test_db.py
