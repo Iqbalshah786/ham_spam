@@ -1,7 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from routes import email_routes
 from fastapi.middleware.cors import CORSMiddleware
+from models.preprocessing import TextPreprocessor
+from models.rl_agent import RLTrainer
+from models.load_model import load_model
 import logging
+
 
 # Initialize FastAPI app
 app = FastAPI(title="German Email Spam Detector")
@@ -41,8 +45,11 @@ logging.basicConfig(level=logging.INFO)
 async def startup_event():
     logging.info("Starting the application...")
     # Add model loading logic here (e.g., load RLTrainer, BERT, etc.)
-    # preprocessor = TextPreprocessor(device='cpu')
-    # trainer = RLTrainer(device='cpu')
+    model = load_model("models/saved_model/spam_detector.pth")
+
+
+    preprocessor = TextPreprocessor()
+    trainer = RLTrainer()
     logging.info("Model loaded and ready!")
 
 # Example of shutdown logic
