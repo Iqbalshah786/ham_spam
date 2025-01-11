@@ -1,3 +1,4 @@
+#routes/email_routes.py
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, ConfigDict
 from typing import Optional

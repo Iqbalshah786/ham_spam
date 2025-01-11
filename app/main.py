@@ -1,3 +1,5 @@
+#/app/main.py
+
 from fastapi import FastAPI, HTTPException
 from routes import email_routes
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,7 +15,7 @@ app = FastAPI(title="German Email Spam Detector")
 # Enable CORS with specific allowed origins (for security)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://your-frontend-domain.com"],  # Replace with your frontend domain
+    allow_origins=["http://localhost:5173"],  # Replace with your frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
